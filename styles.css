@@ -627,50 +627,34 @@ h2 {
 }
 
 .slot {
-  aspect-ratio: 4/5;
-  border: 2px dashed #eab1b1;
-  border-radius: 18px;
-  background: #fff;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  color: #b97a7a;
-  font-size: .85rem;
-  text-align: center;
-  padding: 10px;
+  min-width: 0;
   overflow: hidden;
-  position: relative;
-  transition: transform .25s,border-color .25s;
+  border: 1px solid #eab1b1;
+  border-radius: 18px;
+  background: #fff;
+  color: var(--ink);
+  text-decoration: none;
 }
 
-.slot::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(110deg,transparent 30%,rgba(242,58,58,.1) 50%,transparent 70%);
-  transform: translateX(-100%);
-  animation: shine 3.4s infinite;
-  animation-delay: calc(var(--i,0)*.35s);
-}
-
-.slot:hover {
+.slot:hover,
+.slot:focus-visible {
   border-color: var(--red);
-  transform: translateY(-4px) rotate(-.6deg);
 }
 
 .slot img {
+  display: block;
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 14px;
-  position: relative;
+  height: auto;
+  aspect-ratio: 9/16;
+  object-fit: contain;
+  background: #15131a;
 }
 
-.slot b {
-  font-size: 2rem;
-  color: var(--red);
-  font-family: var(--disp);
+.slot span {
+  padding: 10px 12px;
+  font-weight: 700;
 }
 
 .about p {
